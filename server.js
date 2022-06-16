@@ -8,6 +8,9 @@ const { getSchedule } = require('./controllers/schedule');
 const { getResult } = require('./controllers/result');
 const PORT = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+  res.redirect('/api');
+});
 app.get('/api', getProfile);
 app.get('/api/schedules', getSchedule);
 app.get('/api/results', getResult);

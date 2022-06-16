@@ -1,11 +1,6 @@
 {
   "version": 2,
   "name": "vlr-api",
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/api"
-    }
-  ],
-  "builds": [{ "src": "server.js", "use": "@vercel/node" }]
+  "builds": [{ "src": "server.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/server.js" }]
 }
