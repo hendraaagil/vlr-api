@@ -8,11 +8,15 @@
    ```bash
    git clone git@github.com:hendraaagil/vlr-api.git
    ```
-2. Install dependencies
+2. Make `.env` file and fill the `SITE_URL`
+   ```bash
+   cp .env.example .env
+   ```
+3. Install dependencies
    ```bash
    yarn # or npm install
    ```
-3. Run server
+4. Run server
    ```bash
    yarn dev # or yarn start
    ```
@@ -20,6 +24,10 @@
 ## Showcase
 
 If you use this API in your project application, you can register your project in this showcase below:
+
+## Contribution
+
+If you want to contribute to this project, you can just open an [issue](https://github.com/hendraaagil/vlr-api/issues) or [pull request](https://github.com/hendraaagil/vlr-api/pulls)
 
 ## License
 
