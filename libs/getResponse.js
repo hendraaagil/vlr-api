@@ -91,9 +91,10 @@ const getResponse = ($, path) => {
   response.map((item) => {
     item.schedules = item.schedules.map((schedule) => {
       const time = new Date(`${item.date} ${schedule.time}`);
+      const newTime = time.setHours(time.getHours() + 4);
       formattedResponse.push({
         ...schedule,
-        time,
+        time: newTime,
       });
     });
   });
