@@ -1,6 +1,6 @@
 {
   "name": "vlr-api",
-  "description": "Valorant match API from vlr.gg",
+  "description": "Valorant match API from https://vlr.gg",
   "author": "hendraaagil",
   "version": "1.0.0",
   "main": "server.js",
@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.11",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1"
   },
   "devDependencies": {
