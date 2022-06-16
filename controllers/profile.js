@@ -2,6 +2,7 @@ const { SITE_URL } = require('../constants/url');
 
 const getProfile = (req, res) => {
   res.status(200).json({
+    tz: process.env.TZ || '-',
     list: {
       schedules: SITE_URL + '/api/schedules',
       results: SITE_URL + '/api/results',
