@@ -1,4 +1,4 @@
-const { BASE_URL } = require('../constant/url');
+const { BASE_URL } = require('../constants/url');
 
 const getResponse = ($, path) => {
   // Find list dates
@@ -78,7 +78,7 @@ const getResponse = ($, path) => {
       schedules.push(schedule);
     });
 
-    const propertyName = path === 'matches' ? 'schedules' : 'results';
+    const propertyName = path === 'schedules' ? 'schedules' : 'results';
     const data = {
       date: dates[index],
     };

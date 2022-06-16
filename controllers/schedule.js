@@ -1,25 +1,17 @@
-const getScrape = require('../lib/getScrape');
-const getMaxpage = require('../lib/getMaxpage');
-const getResponse = require('../lib/getResponse');
+const getScrape = require('../libs/getScrape');
+const getResponse = require('../libs/getResponse');
+const getPagination = require('../libs/getPagination');
 
 const getSchedule = async (req, res) => {
   try {
     const page = req.query.page || 1;
-    const $ = await getScrape(page, 'matches');
-
-    // Find max pages
-    const maxPage = await getMaxpage(page, 'matches');
-    if (Number(req.query.page) > maxPage) {
-      return res.status(404).json({
-        message: `Data from page ${req.query.page} is not found!`,
-      });
-    }
-
-    const response = getResponse($, 'matches');
+    const $ = await getScrape(page, 'schedules');
+    const response = getResponse($, 'schedules');
+    const pagination = await getPagination('schedules', page);
 
     res.status(200).json({
       message: 'Successfully get schedule data',
-      maxPage: maxPage,
+      pagination,
       response,
     });
   } catch (err) {

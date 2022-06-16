@@ -1,4 +1,4 @@
-const { SITE_URL } = require('../constant/url');
+const { SITE_URL } = require('../constants/url');
 
 const getProfile = (req, res) => {
   res.status(200).json({
@@ -6,7 +6,10 @@ const getProfile = (req, res) => {
       schedules: SITE_URL + '/api/schedules',
       results: SITE_URL + '/api/results',
     },
-    author: 'Hendra Agil',
+    author: {
+      name: 'Hendra Agil',
+      site: 'https://hendraaagil.id',
+    },
     source: 'https://github.com/hendraaagil/vlr-api',
   });
 };
