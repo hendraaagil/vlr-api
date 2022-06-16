@@ -87,7 +87,18 @@ const getResponse = ($, path) => {
     response.push(data);
   });
 
-  return response;
+  const formattedResponse = [];
+  response.map((item) => {
+    item.schedules = item.schedules.map((schedule) => {
+      const time = new Date(`${item.date} ${schedule.time}`);
+      formattedResponse.push({
+        ...schedule,
+        time,
+      });
+    });
+  });
+
+  return formattedResponse;
 };
 
 module.exports = getResponse;
