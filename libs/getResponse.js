@@ -1,6 +1,7 @@
 const { BASE_URL } = require('../constants/url');
 
 const getResponse = ($, path) => {
+  const propertyName = path === 'schedules' ? 'schedules' : 'results';
   // Find list dates
   const listDates = $('#wrapper > .col-container > .mod-1 > .wf-label');
   const dates = [];
@@ -78,7 +79,6 @@ const getResponse = ($, path) => {
       schedules.push(schedule);
     });
 
-    const propertyName = path === 'schedules' ? 'schedules' : 'results';
     const data = {
       date: dates[index],
     };
@@ -89,7 +89,7 @@ const getResponse = ($, path) => {
 
   const formattedResponse = [];
   response.map((item) => {
-    item.schedules = item.schedules.map((schedule) => {
+    item[propertyName] = item[propertyName].map((schedule) => {
       const time = new Date(`${item.date} ${schedule.time}`);
       const newTime = new Date(time.setHours(time.getHours() + 4));
       formattedResponse.push({
