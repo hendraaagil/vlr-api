@@ -42,12 +42,22 @@ const getResponse = ($, path) => {
           .text()
           .replace(/\t/g, '')
           .replace(/\n/g, '');
+        const flag = $(team)
+          .children('.match-item-vs-team-name')
+          .children('.text-of')
+          .children('.flag')
+          .attr('class')
+          .slice(-2);
         const score = $(team)
           .children('.match-item-vs-team-score')
           .text()
           .replace(/–/g, '-')
           .trim();
-        teams.push({ name, score });
+        teams.push({
+          flag: BASE_URL + `/img/icons/flags/32/${flag}.png`,
+          name,
+          score,
+        });
       });
 
       const status = $(item)
