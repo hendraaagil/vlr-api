@@ -8,7 +8,7 @@ const getProfile = (req, res) => {
     },
     author: {
       name: 'Hendra Agil',
-      site: 'https://hendraaagil.id',
+      site: 'https://hendraaagil.dev',
     },
     source: 'https://github.com/hendraaagil/vlr-api',
   });
