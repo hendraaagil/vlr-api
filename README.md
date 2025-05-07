@@ -14,11 +14,11 @@
    ```
 3. Install dependencies
    ```bash
-   yarn # or npm install
+   pnpm install
    ```
 4. Run server
    ```bash
-   yarn dev # or yarn start
+   pnpm dev # or pnpm start
    ```
 
 ## Showcase
