@@ -42,7 +42,7 @@ jobs:
             git pull origin main
 
             # Stop existing containers
-            docker-compose down || true
+            docker compose down || true
 
             # Start containers with the locally built image
             docker compose up --build -d
