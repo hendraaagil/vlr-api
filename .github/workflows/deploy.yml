@@ -52,7 +52,7 @@ jobs:
             docker run -d \
               --restart always \
               --name ${{ env.CONTAINER_NAME }} \
-              --memory="128m" \
+              --memory 256m \
               -p 3001:3001 \
               ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.APP_NAME }}:latest
           EOF
