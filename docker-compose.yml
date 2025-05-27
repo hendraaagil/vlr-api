@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vlr-api-container
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+    ports:
+      - '127.0.0.1:3001:3001'
