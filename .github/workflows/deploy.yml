@@ -53,5 +53,6 @@ jobs:
               --restart always \
               --name ${{ env.CONTAINER_NAME }} \
               --memory 256m \
+              -p 127.0.0.1:3001:3001
               ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.APP_NAME }}:latest
           EOF
