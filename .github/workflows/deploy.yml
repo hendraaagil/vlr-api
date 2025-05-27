@@ -39,7 +39,6 @@ jobs:
             cd ~/apps/${{ env.APP_NAME }}
 
             # Pull repository
-            ssh -T git@github.com
             git pull origin main
 
             # Stop existing containers
