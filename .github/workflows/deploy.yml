@@ -12,7 +12,6 @@ jobs:
 
     env:
       APP_NAME: vlr-api
-      CONTAINER_NAME: vlr-api-container
 
     steps:
       - name: Checkout code

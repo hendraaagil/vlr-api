@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: vlr-api:latest
-    container_name: vlr-api-container
+    container_name: vlr-api
     restart: always
     deploy:
       resources:
