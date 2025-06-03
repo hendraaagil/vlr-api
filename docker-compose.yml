@@ -9,6 +9,6 @@ services:
     deploy:
       resources:
         limits:
-          memory: 256m
+          memory: 512m
     ports:
       - '127.0.0.1:3001:3001'
